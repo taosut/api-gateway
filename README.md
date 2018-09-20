@@ -1,6 +1,6 @@
 # Europeana API Gateway
 
-Gateway for Europeana APIs using NGINX on CloudFoundry.
+Gateway for Europeana APIs using [NGINX on CloudFoundry](https://docs.cloudfoundry.org/buildpacks/nginx/).
 
 ## License
 
