@@ -1,12 +1,15 @@
-# NB: not yet working due to CF-specific templating syntax in nginx.conf
-# TODO: make it work...
-
 FROM nginx:1.15.2
 
 MAINTAINER Europeana Foundation <development@europeana.eu>
 
+# TODO: add a self-signed SSL certificate
+
+COPY docker/env-nginx docker/rewrite-nginx-conf /usr/sbin/
+
 COPY public /usr/share/nginx/html
+COPY mime.types nginx.conf.d /etc/nginx/
+COPY nginx.conf /etc/nginx/nginx.template.conf
 
-COPY nginx.conf mime.types nginx.conf.d /etc/nginx/
+RUN rewrite-nginx-conf
 
-CMD ["nginx"]
+ENTRYPOINT ["env-nginx"]

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Substitute env var strings in NGINX config with values from env
+
+vars='$ANNOTATION_API_HOST
+      $ENTITY_API_HOST
+      $FULLTEXT_API_HOST
+      $RESOLVER_ADDRESS
+      $ROOT_REDIRECT_URL
+      $SEARCH_API_HOST
+      $SET_API_HOST
+      $THUMBNAIL_API_HOST'
+
+envsubst "${vars}" < /etc/nginx/nginx.template.conf > /etc/nginx/nginx.conf
+
+nginx
