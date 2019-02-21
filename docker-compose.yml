@@ -1,0 +1,9 @@
+version: "3"
+services:
+  nginx:
+    image: api-gateway
+    build:
+      context: .
+    env_file: .env.docker
+    ports:
+      - "8080:80"
