@@ -1,4 +1,5 @@
-FROM nginx:1.15.2
+# NB: ensure the version matches that in buildpack.yml
+FROM nginx:1.15.8
 
 MAINTAINER Europeana Foundation <development@europeana.eu>
 
