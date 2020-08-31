@@ -9,7 +9,10 @@ vars='$ANNOTATION_API_HOST
       $ROOT_REDIRECT_URL
       $SEARCH_API_HOST
       $SET_API_HOST
-      $THUMBNAIL_API_HOST'
+      $OAI_RECORD_HOST
+      $MANIFEST_API_HOST
+      $THUMBNAIL_API_HOST
+      $RECOMMENDATION_API_HOST'
 
 envsubst "${vars}" < /etc/nginx/nginx.template.conf > /etc/nginx/nginx.conf
 
